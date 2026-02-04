@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Shield, ChevronDown } from "lucide-react";
@@ -16,7 +16,6 @@ const navItems = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showStickyCta, setShowStickyCta] = useState(false);
   const location = useLocation();
 
   const isActive = (href: string) => {
@@ -24,14 +23,6 @@ export function Header() {
     return location.pathname.startsWith(href);
   };
 
-  useEffect(() => {
-    const onScroll = () => {
-      setShowStickyCta(window.scrollY > 220);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 glass">
@@ -138,15 +129,6 @@ export function Header() {
       </AnimatePresence>
 
       {/* Mobile Sticky CTA - appears on scroll */}
-      {!mobileMenuOpen && showStickyCta && (
-        <div className="fixed bottom-4 left-4 right-4 z-40 lg:hidden">
-          <Link to="/start-recovery">
-            <Button variant="hero" size="xl" className="w-full shadow-card-lg">
-              Start a Recovery
-            </Button>
-          </Link>
-        </div>
-      )}
     </header>
   );
 }
