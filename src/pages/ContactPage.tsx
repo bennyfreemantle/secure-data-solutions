@@ -7,40 +7,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
 import {
-  Mail,
-  Phone,
-  MapPin,
-  Clock,
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
-
-const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "hello@datarecover.uk",
-    href: "mailto:hello@datarecover.uk",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "0800 123 4567",
-    href: "tel:+448001234567",
-  },
-  {
-    icon: MapPin,
-    label: "Service Area",
-    value: "UK-wide mail-in service",
-    href: null,
-  },
-  {
-    icon: Clock,
-    label: "Hours",
-    value: "Mon-Fri: 9am-6pm, Sat: 10am-2pm",
-    href: null,
-  },
-];
+import { contactInfo } from "@/data/contact";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
