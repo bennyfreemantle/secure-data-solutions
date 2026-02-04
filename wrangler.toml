@@ -1,11 +1,4 @@
 name = "secure-data-solutions"
 compatibility_date = "2026-02-04"
-compatibility_flags = [ "nodejs_compat" ]
-
-[pages]
-# For Cloudflare Pages with Next.js via next-on-pages
-build_command = "npx @cloudflare/next-on-pages@1"
+compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
-
-[vars]
-NODE_VERSION = "22"
