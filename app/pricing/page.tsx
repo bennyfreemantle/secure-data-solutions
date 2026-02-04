@@ -1,9 +1,11 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { PricingCard } from "@/components/ui/pricing-card";
 import { Callout } from "@/components/ui/callout";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   ArrowRight,
   HelpCircle,
@@ -187,13 +189,13 @@ export default function PricingPage() {
             before any recovery work begins.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link to="/start-recovery">
+            <Link href="/start-recovery">
               <Button variant="hero" size="xl">
                 Start a Recovery
                 <ArrowRight className="ml-1 h-5 w-5" />
               </Button>
             </Link>
-            <Link to="/how-it-works">
+            <Link href="/how-it-works">
               <Button variant="outline" size="xl">
                 See How It Works
               </Button>

@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function PrivacyPage() {
   const lastUpdated = "1 February 2026";
@@ -124,7 +126,7 @@ export default function PrivacyPage() {
             <p className="text-sm text-muted-foreground mb-4">
               Questions about this policy?
             </p>
-            <Link to="/contact" className="text-accent hover:underline font-medium">
+            <Link href="/contact" className="text-accent hover:underline font-medium">
               Contact us →
             </Link>
           </div>

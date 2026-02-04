@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
 import { Check } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface PricingCardProps {
   tier: string;
@@ -78,7 +78,7 @@ export function PricingCard({
       </ul>
 
       {/* CTA */}
-      <Link to={ctaHref} className="w-full">
+      <Link href={ctaHref} className="w-full">
         <Button
           variant={popular ? "accent" : "outline"}
           size="lg"

@@ -1,9 +1,11 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { ServiceCard } from "@/components/ui/service-card";
 import { Callout } from "@/components/ui/callout";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   ArrowRight,
   AlertTriangle,
@@ -148,7 +150,7 @@ export default function ServicesPage() {
 
         <Callout icon={Users} title="Not Sure What You Need?" variant="info" className="mt-8">
           <p>Contact us to discuss your situation. We'll recommend the right service level and give you an honest assessment of what's possible.</p>
-          <Link to="/contact" className="inline-flex items-center gap-1 mt-3 text-accent font-medium hover:underline">
+          <Link href="/contact" className="inline-flex items-center gap-1 mt-3 text-accent font-medium hover:underline">
             Get in touch <ArrowRight className="h-4 w-4" />
           </Link>
         </Callout>
@@ -180,12 +182,12 @@ export default function ServicesPage() {
               </ul>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">
-              <Link to="/start-recovery">
+              <Link href="/start-recovery">
                 <Button variant="accent" size="xl">
                   Start Business Recovery
                 </Button>
               </Link>
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button variant="ghost" className="text-primary-foreground hover:bg-primary-foreground/10">
                   Speak to a Specialist
                   <ArrowRight className="ml-1 h-4 w-4" />
@@ -203,7 +205,7 @@ export default function ServicesPage() {
           <p className="mx-auto mb-8 max-w-xl text-lg text-muted-foreground">
             Tell us about your situation and we'll provide a free initial assessment and quote.
           </p>
-          <Link to="/start-recovery">
+          <Link href="/start-recovery">
             <Button variant="hero" size="xl">
               Start a Recovery
               <ArrowRight className="ml-1 h-5 w-5" />

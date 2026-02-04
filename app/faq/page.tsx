@@ -1,7 +1,9 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import {
   Accordion,
@@ -25,7 +27,7 @@ export default function FAQPage() {
             <h1 className="mb-4">Frequently Asked Questions</h1>
             <p className="text-lg text-muted-foreground">
               Everything you need to know about our data recovery service.
-              Can't find your answer? <Link to="/contact" className="text-accent hover:underline">Get in touch</Link>.
+              Can't find your answer? <Link href="/contact" className="text-accent hover:underline">Get in touch</Link>.
             </p>
           </motion.div>
         </div>
@@ -71,12 +73,12 @@ export default function FAQPage() {
             We're here to help. Get in touch and we'll respond promptly.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link to="/contact">
+            <Link href="/contact">
               <Button variant="accent" size="xl">
                 Contact Us
               </Button>
             </Link>
-            <Link to="/start-recovery">
+            <Link href="/start-recovery">
               <Button variant="outline" size="xl">
                 Start a Recovery
                 <ArrowRight className="ml-1 h-5 w-5" />

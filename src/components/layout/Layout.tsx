@@ -1,5 +1,7 @@
+"use client";
+
 import { ReactNode, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
@@ -8,11 +10,11 @@ interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <div className="flex min-h-screen flex-col">

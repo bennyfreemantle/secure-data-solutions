@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
@@ -5,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
@@ -45,12 +47,12 @@ export default function ContactPage() {
               a few hours during business hours.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link to="/start-recovery">
+              <Link href="/start-recovery">
                 <Button variant="accent" size="lg">
                   Start a Recovery
                 </Button>
               </Link>
-              <Link to="/">
+              <Link href="/">
                 <Button variant="ghost" size="lg">
                   Return Home
                 </Button>
@@ -129,7 +131,7 @@ export default function ContactPage() {
                 If you're ready to begin a recovery, use our intake form for
                 the fastest response.
               </p>
-              <Link to="/start-recovery">
+              <Link href="/start-recovery">
                 <Button variant="accent" size="lg">
                   Start a Recovery
                   <ArrowRight className="ml-1 h-4 w-4" />

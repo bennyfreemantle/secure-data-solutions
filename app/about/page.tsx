@@ -1,8 +1,10 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Microscope, Users } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { approach, founders, values } from "@/data/about";
 
 export default function AboutPage() {
@@ -188,13 +190,13 @@ export default function AboutPage() {
             and transparency make.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link to="/start-recovery">
+            <Link href="/start-recovery">
               <Button variant="hero" size="xl">
                 Start a Recovery
                 <ArrowRight className="ml-1 h-5 w-5" />
               </Button>
             </Link>
-            <Link to="/contact">
+            <Link href="/contact">
               <Button variant="outline" size="xl">
                 Contact Us
               </Button>

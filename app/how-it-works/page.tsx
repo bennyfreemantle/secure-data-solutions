@@ -1,9 +1,11 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Stepper } from "@/components/ui/stepper";
 import { Callout } from "@/components/ui/callout";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
@@ -180,7 +182,7 @@ export default function HowItWorksPage() {
           <p className="mx-auto mb-8 max-w-xl text-lg text-muted-foreground">
             Complete our intake form and we'll send you shipping instructions and a prepaid label.
           </p>
-          <Link to="/start-recovery">
+          <Link href="/start-recovery">
             <Button variant="hero" size="xl">
               Start a Recovery
               <ArrowRight className="ml-1 h-5 w-5" />

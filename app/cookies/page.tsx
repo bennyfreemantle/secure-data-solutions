@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function CookiesPage() {
   const lastUpdated = "1 February 2026";
@@ -147,7 +149,7 @@ export default function CookiesPage() {
             <p className="text-sm text-muted-foreground mb-4">
               Want to learn more about how we protect your data?
             </p>
-            <Link to="/privacy" className="text-accent hover:underline font-medium">
+            <Link href="/privacy" className="text-accent hover:underline font-medium">
               Read our Privacy Policy →
             </Link>
           </div>

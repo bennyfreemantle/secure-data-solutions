@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { TrustBadges } from "@/components/ui/trust-badge";
@@ -48,13 +50,13 @@ export default function HomePage() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="mb-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
             >
-              <Link to="/start-recovery">
+              <Link href="/start-recovery">
                 <Button variant="hero" size="xl">
                   Start a Recovery
                   <ArrowRight className="ml-1 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/pricing">
+              <Link href="/pricing">
                 <Button variant="hero-secondary" size="xl">
                   See Pricing
                 </Button>
@@ -127,7 +129,7 @@ export default function HomePage() {
           ))}
         </div>
         <div className="mt-8 text-center">
-          <Link to="/pricing">
+          <Link href="/pricing">
             <Button variant="link" className="gap-1">
               View full pricing details
               <ArrowRight className="h-4 w-4" />
@@ -184,12 +186,12 @@ export default function HomePage() {
               When downtime costs money, we move fast.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link to="/start-recovery">
+              <Link href="/start-recovery">
                 <Button variant="accent" size="xl">
                   Start Business Recovery
                 </Button>
               </Link>
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button variant="accent-outline" size="xl" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                   Speak to a Specialist
                 </Button>
@@ -206,7 +208,7 @@ export default function HomePage() {
           <p className="mx-auto mb-8 max-w-xl text-lg text-muted-foreground">
             Start your recovery today. We'll reply quickly with next steps and a rough estimate. No obligation.
           </p>
-          <Link to="/start-recovery">
+          <Link href="/start-recovery">
             <Button variant="hero" size="xl">
               Start a Recovery
               <ArrowRight className="ml-1 h-5 w-5" />

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { LucideIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
@@ -68,7 +68,7 @@ export function ServiceCard({
   );
 
   if (href) {
-    return <Link to={href}>{content}</Link>;
+    return <Link href={href}>{content}</Link>;
   }
 
   return content;

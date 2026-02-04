@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
@@ -21,7 +23,7 @@ import {
   ArrowRight,
   AlertTriangle,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { deviceTypes, symptoms, urgencyLevels } from "@/data/start-recovery";
 
 export default function StartRecoveryPage() {
@@ -96,12 +98,12 @@ export default function StartRecoveryPage() {
           </div>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link to="/how-it-works">
+            <Link href="/how-it-works">
               <Button variant="outline" size="lg">
                 View Shipping Guide
               </Button>
             </Link>
-            <Link to="/">
+            <Link href="/">
               <Button variant="ghost" size="lg">
                 Return Home
               </Button>
@@ -368,9 +370,9 @@ export default function StartRecoveryPage() {
                   />
                   <Label htmlFor="consent3" className="text-sm font-normal leading-relaxed cursor-pointer">
                     I have read and agree to the{" "}
-                    <Link to="/terms" className="text-accent hover:underline">Terms & Conditions</Link>
+                    <Link href="/terms" className="text-accent hover:underline">Terms & Conditions</Link>
                     {" "}and{" "}
-                    <Link to="/privacy" className="text-accent hover:underline">Privacy Policy</Link>. *
+                    <Link href="/privacy" className="text-accent hover:underline">Privacy Policy</Link>. *
                   </Label>
                 </div>
               </div>

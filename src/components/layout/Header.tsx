@@ -1,5 +1,8 @@
+"use client";
+
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Shield, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,20 +19,19 @@ const navItems = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   const isActive = (href: string) => {
-    if (href === "/") return location.pathname === "/";
-    return location.pathname.startsWith(href);
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
   };
-
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 glass">
       <div className="container-wide">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary transition-transform group-hover:scale-105">
               <Shield className="h-5 w-5 text-primary-foreground" />
             </div>
@@ -48,7 +50,7 @@ export function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.href}
-                to={item.href}
+                href={item.href}
                 className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground ${
                   isActive(item.href)
                     ? "text-foreground"
@@ -69,7 +71,7 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden items-center gap-3 lg:flex">
-            <Link to="/start-recovery">
+            <Link href="/start-recovery">
               <Button variant="accent" size="lg">
                 Start a Recovery
               </Button>
@@ -105,7 +107,7 @@ export function Header() {
               {navItems.map((item) => (
                 <Link
                   key={item.href}
-                  to={item.href}
+                  href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`rounded-lg px-4 py-3 text-base font-medium transition-colors ${
                     isActive(item.href)
@@ -117,7 +119,10 @@ export function Header() {
                 </Link>
               ))}
               <div className="mt-4 border-t border-border pt-4">
-                <Link to="/start-recovery" onClick={() => setMobileMenuOpen(false)}>
+                <Link
+                  href="/start-recovery"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   <Button variant="accent" size="lg" className="w-full">
                     Start a Recovery
                   </Button>

@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function TermsPage() {
   const lastUpdated = "1 February 2026";
@@ -87,7 +89,7 @@ export default function TermsPage() {
             <li>We do not browse, examine, or copy your files beyond what recovery requires</li>
             <li>Recovered data is stored on encrypted systems with access controls</li>
             <li>Data is retained for 14 days after delivery, then securely deleted</li>
-            <li>See our <Link to="/privacy">Privacy Policy</Link> for full details</li>
+            <li>See our <Link href="/privacy">Privacy Policy</Link> for full details</li>
           </ul>
 
           <h2>8. Payment</h2>
@@ -139,7 +141,7 @@ export default function TermsPage() {
             <p className="text-sm text-muted-foreground mb-4">
               Questions about these terms?
             </p>
-            <Link to="/contact" className="text-accent hover:underline font-medium">
+            <Link href="/contact" className="text-accent hover:underline font-medium">
               Contact us →
             </Link>
           </div>
